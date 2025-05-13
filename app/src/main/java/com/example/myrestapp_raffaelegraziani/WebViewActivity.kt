@@ -11,6 +11,6 @@ class WebViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_web_view)
-        
+
     }
 }
