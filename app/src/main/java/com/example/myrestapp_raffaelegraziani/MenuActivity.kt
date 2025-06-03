@@ -18,6 +18,11 @@ class MenuActivity : AppCompatActivity() {
         btnNetflix.setOnClickListener {
             intent(WebViewActivity::class.java)
         }
+
+        val btnSearch = findViewById<ImageButton>(R.id.btnSearch)
+        btnSearch.setOnClickListener {
+            intent(SearchActivity::class.java)
+        }
     }
 
     private fun intent(nomeActivity: Class<*>){ //Lancia l'intent dal nome per parametro
