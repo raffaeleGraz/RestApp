@@ -24,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Titolo"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -31,7 +32,8 @@
             android:id="@+id/tvAnno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Anno" />
+            android:text="Anno"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </LinearLayout>
