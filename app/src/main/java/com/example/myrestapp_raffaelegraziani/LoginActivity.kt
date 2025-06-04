@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import java.security.MessageDigest
@@ -21,8 +22,19 @@ class LoginActivity : AppCompatActivity() {
         btnLogin.setOnClickListener { // Click del bottone
             // Recupera l'input dell'utente sotto forma di stringa
             val username = inputUsername.text.toString()
-            val password = inputPassword.text.toString()
-            // intent(MenuActivity::class.java)
+            val password = md5(inputPassword.text.toString()) // Codifica la password per non averla in chiaro
+
+            // Verifica la correttezza delle credenziali
+            if(checkLogin(username, password)) {
+                val mioToast = Toast.makeText(this, "Accesso eseguito!", Toast.LENGTH_SHORT)
+                mioToast.show()
+
+                // Passaggio al menù
+                intent(MenuActivity::class.java)
+            } else{
+                val mioToast = Toast.makeText(this, "Credenziali errate!", Toast.LENGTH_SHORT)
+                mioToast.show()
+            }
         }
     }
 
