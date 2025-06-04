@@ -81,7 +81,7 @@ Creato con ❤️ da [Raffaele Graziani](https://github.com/raffaeleGraz)
 ## 🖼️ Schermate
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="assets/hlogin.png" alt="Screenshot 1" width="30%" />
+  <img src="assets/login.png" alt="Screenshot 1" width="30%" />
   <img src="assets/menu.png" alt="Screenshot 2" width="30%" />
   <img src="assets/cerca.png" alt="Screenshot 3" width="30%" />
 </div>
