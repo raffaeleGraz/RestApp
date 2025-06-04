@@ -18,8 +18,20 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun intent(nomeActivity: Class<*>){ //Lancia l'intent dal nome per parametro
+    // Lancia l'intent dal nome per parametro
+    private fun intent(nomeActivity: Class<*>){
         val intent = Intent(this, nomeActivity)
         startActivity(intent)
     }
+
+    // Controlla le credenziali di login
+    private fun checkLogin(inputUsername: String, inputPassword: String): Boolean{
+        // Credenziali corrette per il login
+        val credenziali = mapOf( // Array associativo
+            "admin" to "21232f297a57a5a743894a0e4a801fc3", // Username e password crittografata
+            "user" to "ee11cbb19052e40b07aac0ca060c23ee"
+        )
+        return credenziali[inputUsername] == inputPassword // True se le credenziali sono state trovate
+    }
+
 }
