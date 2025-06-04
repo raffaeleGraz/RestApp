@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         val inputUsername = findViewById<EditText>(R.id.inputUsername)
         val inputPassword = findViewById<EditText>(R.id.inputPassword)
 
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
+        val btnLogin = findViewById<ImageButton>(R.id.btnLogin)
         btnLogin.setOnClickListener { // Click del bottone
             // Recupera l'input dell'utente sotto forma di stringa
             val username = inputUsername.text.toString()
