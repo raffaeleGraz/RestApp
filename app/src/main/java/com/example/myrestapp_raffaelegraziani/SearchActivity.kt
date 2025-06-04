@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -19,7 +20,7 @@ import com.google.gson.Gson
 
 class SearchActivity : AppCompatActivity() {
     lateinit var etSearchText: EditText
-    lateinit var btnSearch: Button
+    lateinit var btnSearch: ImageButton
     lateinit var recyclerViewResults: RecyclerView
     lateinit var movieAdapter: MovieAdapter
     lateinit var requestQueue: RequestQueue
