@@ -3,8 +3,10 @@ package com.example.myrestapp_raffaelegraziani
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import java.security.MessageDigest
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,9 +14,15 @@ class LoginActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
+        val inputUsername = findViewById<EditText>(R.id.inputUsername)
+        val inputPassword = findViewById<EditText>(R.id.inputPassword)
+
         val btnLogin = findViewById<Button>(R.id.btnLogin)
-        btnLogin.setOnClickListener {
-            intent(MenuActivity::class.java)
+        btnLogin.setOnClickListener { // Click del bottone
+            // Recupera l'input dell'utente sotto forma di stringa
+            val username = inputUsername.text.toString()
+            val password = inputPassword.text.toString()
+            // intent(MenuActivity::class.java)
         }
     }
 
@@ -32,6 +40,12 @@ class LoginActivity : AppCompatActivity() {
             "user" to "ee11cbb19052e40b07aac0ca060c23ee"
         )
         return credenziali[inputUsername] == inputPassword // True se le credenziali sono state trovate
+    }
+
+    // Funzione per crittografare in md5
+    private fun md5(input: String): String {
+        val bytes = MessageDigest.getInstance("MD5").digest(input.toByteArray())
+        return bytes.joinToString("") { "%02x".format(it) }
     }
 
 }
